@@ -1,0 +1,92 @@
+body {
+    background-color: black;
+    color: white;
+    height: 90vh;
+    margin: 0;
+    padding-bottom: 50px;
+} 
+ 
+/* Styling for contact */
+.contact {
+  background-color: black;
+  }
+
+#contact-us {
+  padding-bottom: 20%;
+  padding-top: 15%
+  }
+  
+span, .contact-heading, .contact-heading {
+  color: white;
+  }
+
+#contact-us, .contact-heading {
+  align-items: center;
+  }
+
+.form-area {
+  padding-top: 5%;
+  margin-left: auto;
+  margin-right: 20%;
+  max-width: 600px
+  }
+
+.row.single-form {
+  box-shadow: 0 2px 20px -5px rgba(144, 139, 139, 0.5);
+  }
+
+
+.right {
+  padding: 20px;
+  padding-right: 10px;
+  padding-left: 10px; 
+  position: relative;
+  background-color: black;
+  }
+
+.right i {
+  position: absolute;
+  font-size: 80px;
+  left: -27px;
+  top: 40%;
+  color: #979797;
+  background: rgb(77, 77, 77)
+  }
+
+.form-control {
+  border: 2px solid #000;
+  }
+
+
+
+  /* Submit Button Contact */
+.submit {
+  background-color: #0f0f0f; 
+  color: white; 
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  border: none; 
+  border-radius: 25px; 
+  padding: 15px 30px; 
+  padding-left: 30px;
+  margin-left: 70%;
+  cursor: pointer; 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; 
+  }
+
+.submit:hover {
+  background-color: #f0f2f4; 
+  color: black;
+  transform: scale(1.05); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+  }
+
+  /* Navbar */
+  .custom-bottom {
+    margin: 0;
+    bottom: 40px;
+
+  }
+
