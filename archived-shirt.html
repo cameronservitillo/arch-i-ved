@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arch"!"ved Shirt</title>
+    <link rel="stylesheet" href="./product-pages.css">
+    
+</head>
+
+<body>
+    <a href="./homepage.html" class="back-link">← back</a>
+
+    <div class="container">
+        <div>
+            <div class="product-gallery">
+                <button class="gallery-arrow" id="prevBtn">←</button>
+                <img id="mainImage" src="./arch.i.ved_pics/arch_i_vedshirt.JPG" alt="arch.!.ved shirt" class="product-image">
+                <button class="gallery-arrow" id="nextBtn">→</button>
+                <div class="gallery-nav">
+                    <span class="gallery-dot active" data-index="0"></span>
+                    <span class="gallery-dot" data-index="1"></span>
+                    <span class="gallery-dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1>arch"!"ved</h1>
+            <h2 style="font-size: 24px; color: #ccc; margin-bottom: 20px; font-weight: normal;">arch"!"ved shirt</h2>
+            <p>Premium streetwear essentials. Bold design, quality fabric.</p>
+            
+            <div class="price">€49.99</div>
+
+            <div class="sizes">
+                <label>Size:</label>
+                <div class="size-buttons">
+                    <button class="size-btn" data-size="xs">XS</button>
+                    <button class="size-btn" data-size="s">S</button>
+                    <button class="size-btn" data-size="m">M</button>
+                    <button class="size-btn" data-size="l">L</button>
+                    <button class="size-btn" data-size="xl">XL</button>
+                </div>
+            </div>
+
+            <button class="add-to-cart">ADD TO CART</button>
+
+            <p style="margin-top: 30px; font-size: 14px; color: #666;">
+                100% cotton. Comfortable fit. Limited edition streetwear.
+            </p>
+        </div>
+    </div>
+
+    <script>
+                const galleryImages = [
+            './arch.i.ved_pics/arch_i_vedshirt.JPG',
+            './arch.i.ved_pics/arch.!.vedshirt2.JPG',
+            './arch.i.ved_pics/arch.!.vedshirt3.JPG'
+        ];
+
+        let currentImageIndex = 0;
+        const mainImage = document.getElementById('mainImage');
+        const galleryDots = document.querySelectorAll('.gallery-dot');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateGallery() {
+            mainImage.src = galleryImages[currentImageIndex];
+            galleryDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentImageIndex);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateGallery();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateGallery();
+        });
+
+        galleryDots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                currentImageIndex = parseInt(e.target.dataset.index);
+                updateGallery();
+            });
+        });
+
+        const sizeBtns = document.querySelectorAll('.size-btn');
+        
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                sizeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>   
+
+</body>
+</html>
