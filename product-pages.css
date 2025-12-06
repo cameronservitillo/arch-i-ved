@@ -1,0 +1,180 @@
+@font-face {
+    font-family: "CustomFont1";
+    src: url('./fonts/aAnotherTag.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #0f0f0f;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.product-gallery {
+    position: relative;
+    width: 100%;
+}
+
+.product-image {
+    width: 100%;
+    border: 3px solid #f0f2f4;
+    background-color: #1a1a1a;
+    display: block;
+}
+
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(240, 242, 244, 0.7);
+    border: none;
+    color: #0f0f0f;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 18px;
+    transition: all 0.3s;
+    z-index: 10;
+    line-height: 1;
+}
+
+.gallery-arrow:hover {
+    background-color: #f0f2f4;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+.gallery-nav {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.gallery-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gallery-dot.active {
+    background-color: #f0f2f4;
+}
+
+.product-info h1 {
+    font-family: "CustomFont1";
+    font-size: 60px;
+    color: #f0f2f4;
+    margin-bottom: 20px;
+    border: 3px solid #f0f2f4;
+    padding: 20px;
+    background-color: #0f0f0f;
+    width: fit-content;
+}
+
+.product-info p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f0f2f4;
+    margin: 20px 0;
+}
+
+.sizes {
+    margin: 30px 0;
+}
+
+.sizes label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #f0f2f4;
+}
+
+.size-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.size-btn {
+    padding: 10px 20px;
+    border: 2px solid #f0f2f4;
+    background-color: #0f0f0f;
+    color: #f0f2f4;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.size-btn:hover,
+.size-btn.active {
+    background-color: #f0f2f4;
+    color: #0f0f0f;
+}
+
+.add-to-cart {
+    background-color: #f0f2f4;
+    color: #0f0f0f;
+    padding: 15px 40px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.add-to-cart:hover {
+    background-color: #0f0f0f;
+    color: #f0f2f4;
+    transform: scale(1.05);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #f0f2f4;
+    font-weight: bold;
+    border-bottom: 2px solid #f0f2f4;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
