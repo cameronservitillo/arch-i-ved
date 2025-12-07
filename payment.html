@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    <title>payment</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="payment.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+      <style id="fixed">
+            @font-face {
+            font-family: "CustomFont";
+            src: url('/fonts/aAnotherTag.ttf') format('truetype');
+        }
+        /* Logo */
+        h1.logo {
+            font-family: "CustomFont";
+            font-size: 4rem;
+            color: white;
+            background-color: black;
+            border: 2px solid white;
+            padding: 10px 20px;
+            display: inline-block;
+            margin: 0;
+            
+        }
+        /* Shopping Cart */
+        .cart-card {
+        background-color: #000;      
+        border: 2px solid #fff;       
+        width: 225px;
+        padding: 12px;
+        text-align: center;
+        color: #fff;                 
+    }
+
+    .cart-card h2 {
+        margin: 0 0 10px;
+        font-size: 1.3rem;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 10px;
+        text-align: left;
+    }
+
+    .cart-items {
+        font-size: 0.8rem;
+        margin: 15px 0;
+    }
+
+    
+    .btn-cart {
+        display: inline-block;
+        margin: 8px;
+        padding: 2px 8px;
+        font-weight: bold;
+        font-size: 0.8rm;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: transparent;
+        color: #fff;
+        border: 2px solid #fff; 
+        transition: all 0.3s ease;  
+        
+    }
+    .button-group {
+        display: flex;
+        justify-content: left;
+        gap: 8px;
+        margin-top: 10px;
+        
+    }
+
+    .btn-cart:hover {
+        background: #fff;
+        color: #000;   
+        transform: scale(1.05); 
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);              
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin: 20px;
+        margin-top: -225px;
+    }
+
+       /* Navbar */
+  .custom-bottom {
+    margin: 0;
+    bottom: 40px;
+
+  }
+  </style>
+
+</head>
+
+<header>
+    <h1 class="logo">arch"!"ved</h1>
+
+    <div class="cart-card">
+    <h2>Your Cart</h2>
+    <div class="cart-items"><strong id="itemCount">0</strong> Items</div>
+    <button class="btn-cart" id="viewCartBtn">View</button>
+    <button class="btn-cart" id="shopMoreBtn">Shop</button>
+
+  </div>
+
+  <script>
+    //Js code for #shop section
+    document.getElementById("shopMoreBtn").addEventListener("click", function () {
+    window.location.href = "product.html"; 
+  });
+
+    // Js code for shopping cart
+    let itemCount = 0;
+    const itemCountElement = document.getElementById("itemCount");
+    const addtocart = document.getElementById("add-to-cart");
+
+    // When "add-to-cart" is clicked, increase item count
+    add-to-cart.addEventListener("click", function () {
+      itemCount++;
+      itemCountElement.textContent = itemCount;
+    });
+
+    document.getElementById("viewCartBtn").addEventListener("click", function () {
+      alert("You have " + itemCount + " item(s) in your cart.");
+    });
+  </script>
+</header>
+
+<body>
+
+      <!-- Navbar fixed at bottom -->
+  <nav class="navbar navbar-dark bg-black fixed-bottom custom-bottom">
+    <div class="container-fluid justify-content-center">
+      <a class="nav-link text-white" href="#"><u>about</u></a>
+      <a class="nav-link text-white" href="#"><u>shop</u></a>
+      <a class="nav-link text-white" href="#"><u>lookbook</u></a>
+      <a class="nav-link text-white" href="#"><u>product</u></a>
+      <a class="nav-link text-white" href="#"><u>sale</u></a>
+      <a class="nav-link text-white" href="#"><u>sizing</u></a>
+    </div>
+  </nav>
+
+  <form class="payment-card" id="paymentForm" novalidate>
+    <h2>Payment</h2>
+
+    <div class="row-1col">
+      <div>
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+      </div>
+      <div>
+        <label for="address">Billing address</label>
+        <input type="text" id="address" name="address" placeholder="123 Example Street" required />
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 12px;">
+      <div>
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="" selected disabled>Select country</option>
+          <option value="IE">Ireland</option>
+          <option value="UK">United Kingdom</option>
+          <option value="US">United States</option>
+          <option value="EU">European Union</option>
+        </select>
+      </div>
+      <div>
+        <label for="postcode">Postcode</label>
+        <input type="text" id="postcode" name="postcode" placeholder="D01 XY12" required />
+      </div>
+    </div>
+
+    <div class="row-1col" style="margin-top: 12px;">
+      <div>
+        <label for="cardNumber">Card number</label>
+        <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" placeholder="4111 1111 1111 1111" required />
+        <div class="help">We don’t store card details in this demo.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 12px;">
+      <div>
+        <label for="expiry">Expiry</label>
+        <input type="text" id="expiry" name="expiry" inputmode="numeric" placeholder="MM/YY" required />
+      </div>
+      <div>
+        <label for="cvc">CVC</label>
+        <input type="text" id="cvc" name="cvc" inputmode="numeric" placeholder="123" required />
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button type="button" class="btn" id="cancelBtn">Cancel</button>
+      <button type="submit" class="btn">Pay now</button>
+    </div>
+
+    <div class="secure-note">Your payment details are encrypted and processed securely.</div>
+  </form>
+  
+</body>
+</html>
