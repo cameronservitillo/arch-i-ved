@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>derschutze — Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="page shop">
+  <!-- Left Sidebar -->
+  <header class="side-col">
+    <div class="logo-card">
+      <div class="brand-title">derschutze</div>
+      <div class="brand-graphic"><img src="assets/mascot.png" alt="mascot" /></div>
+    </div>
+    
+    <div class="cart-card">
+      <div class="cart-title">CART</div>
+      <div class="currency-select">
+        <span class="currency-label">€|EUR</span>
+        <select id="currency">
+          <option>EUR</option><option>USD</option><option>GBP</option>
+        </select>
+      </div>
+      <div class="cart-count">0 items</div>
+      <div class="cart-actions">
+        <a href="cart.html" class="btn ghost">cart</a>
+        <a href="shop.html" class="btn ghost">shop</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Centered Main Content -->
+  <main class="main-col">
+    <!-- Top Navigation -->
+    <div class="top-bar">
+      <div class="search">SEARCH •</div>
+      
+      <nav class="categories">
+        <a href="#" class="active">ALL</a>
+        <a href="#">PANTS</a>
+        <a href="#">TOPS</a>
+        <a href="#">OUTERWEAR</a>
+        <a href="#">FOOTWEAR</a>
+        <a href="#">ACCESSORIES</a>
+      </nav>
+      
+      <div class="toggles">
+        <label class="checkbox"><input type="checkbox"> PLAIN</label>
+        <button class="link">filter</button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <section class="grid products">
+      <article class="product">
+        <img src="assets/products/p1-main.jpg" alt="Floral Denim">
+        <div class="prod-name">Floral Denim Jacket</div>
+        <div class="prod-price">€220</div>
+      </article>
+      
+      <article class="product">
+        <img src="assets/products/p2.jpg" alt="Oversized Hoodie">
+        <div class="prod-name">Oversized Hoodie</div>
+        <div class="prod-price">€95</div>
+      </article>
+      
+      <article class="product">
+        <img src="assets/products/p3.jpg" alt="Cargo Pants">
+        <div class="prod-name">Utility Cargo Pants</div>
+        <div class="prod-price">€130</div>
+      </article>
+      
+      <article class="product">
+        <img src="assets/products/p4.jpg" alt="Graphic Tee">
+        <div class="prod-name">Graphic Logo Tee</div>
+        <div class="prod-price">€45</div>
+      </article>
+      
+      <article class="product">
+        <img src="assets/products/p5.jpg" alt="Leather Jacket">
+        <div class="prod-name">Distressed Leather</div>
+        <div class="prod-price">€320</div>
+      </article>
+      
+      <article class="product">
+        <img src="assets/products/p6.jpg" alt="Knit Sweater">
+        <div class="prod-name">Cable Knit Sweater</div>
+        <div class="prod-price">€110</div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-nav">
+    <a href="shop.html" class="active">shop</a>
+    <a href="lookbook.html">lookbook</a>
+    <a href="about.html">about</a>
+    <a href="contact.html">contact</a>
+    <a href="size.html">size guide</a>
+  </footer>
+  
+  <script src="main.js"></script>
+</body>
+</html>
