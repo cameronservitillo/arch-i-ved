@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    <title>login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="login-page.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+      <style>
+        
+      body {
+          background-color: black;
+          color: white;
+          height: 100vh;
+          margin: 0;
+          padding: 0;
+          font-family: "Courier New", Courier, monospace; 
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+      } 
+ 
+        /* Logo */
+            @font-face {
+            font-family: "CustomFont";
+            src: url('/fonts/aAnotherTag.ttf') format('truetype');
+        }
+
+        h1.logo {
+            font-family: "CustomFont";
+            font-size: 4rem;
+            color: white;
+            background-color: black;
+            border: 2px solid white;
+            padding: 10px 20px;
+            display: inline-block;
+            margin: 0;
+            
+        }
+        /* Shopping Cart */
+        .cart-card {
+        background-color: #000;      
+        border: 2px solid #fff;       
+        width: 225px;
+        padding: 12px;
+        text-align: center;
+        color: #fff;                 
+    }
+
+    .cart-card h2 {
+        margin: 0 0 10px;
+        font-size: 1.3rem;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 10px;
+        text-align: left;
+    }
+
+    .cart-items {
+        font-size: 0.8rem;
+        margin: 15px 0;
+    }
+
+    
+    .btn-cart {
+        display: inline-block;
+        margin: 8px;
+        padding: 2px 8px;
+        font-weight: bold;
+        font-size: 0.8rm;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: transparent;
+        color: #fff;
+        border: 2px solid #fff; 
+        transition: all 0.3s ease;  
+        
+    }
+    .button-group {
+        display: flex;
+        justify-content: left;
+        gap: 8px;
+        margin-top: 10px;
+        
+    }
+
+    .btn-cart:hover {
+        background: #fff;
+        color: #000;   
+        transform: scale(1.05); 
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);              
+    }
+    /* Logo + Cart */
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 0;
+        margin-left: 40vh;
+        margin-top: -23vh;
+    }
+    
+    /* Navbar */
+  .custom-bottom {
+    margin: 0;
+    bottom: 40px;
+
+  }
+  </style>
+</head>
+
+
+
+<body>
+
+  <header>
+ 
+    <h1 class="logo">arch"!"ved</h1>
+
+ 
+    <div class="cart-card">
+    <h2>Your Cart</h2>
+    <div class="cart-items"><strong id="itemCount">0</strong> Items</div>
+    <button class="btn-cart" id="viewCartBtn">View</button>
+    <button class="btn-cart" id="shopMoreBtn">Shop</button>
+
+  </div>
+</header>
+
+   <div class="login-card">
+    <h2>Login</h2>
+    <form>
+      <!-- Email -->
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" required>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required>
+      </div>
+
+      <!-- Remember me -->
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="rememberMe">
+        <label class="form-check-label" for="rememberMe">Remember me</label>
+      </div>
+
+      <!-- Login button -->
+      <input type="submit" value="LOGIN" class="submit"/>
+
+      <!-- Extra links -->
+      <div class="border">
+      </div>
+    </form>
+  </div>
+
+
+      <!-- Navbar fixed at bottom -->
+  <nav class="navbar navbar-dark bg-black fixed-bottom custom-bottom">
+    <div class="container-fluid justify-content-center">
+      <a class="nav-link text-white" href="#"><u>about</u></a>
+      <a class="nav-link text-white" href="#"><u>shop</u></a>
+      <a class="nav-link text-white" href="#"><u>lookbook</u></a>
+      <a class="nav-link text-white" href="#"><u>product</u></a>
+      <a class="nav-link text-white" href="#"><u>sale</u></a>
+      <a class="nav-link text-white" href="#"><u>sizing</u></a>
+    </div>
+  </nav>
+
+  <script>
+
+  // Js for login form
+  const loginForm = document.querySelector(".login-card form");
+
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // prevent page reload
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
+    const rememberMe = document.getElementById("rememberMe").checked;
+
+    console.log("Login attempt:");
+    console.log("Email:", email);
+    console.log("Password:", password ? "••••••" : "(empty)");
+    console.log("Remember Me:", rememberMe);
+
+
+    if (email === "" || password === "") {
+      console.warn("Validation failed: Email or password missing.");
+      alert("Please enter both email and password.");
+      return;
+    }
+
+
+    console.info("Validation passed. Logging in...");
+    alert("Login successful for " + email);
+
+    window.location.href = "product.html"
+  });
+
+  </script>
+
+</body>
+</html>

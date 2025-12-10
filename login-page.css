@@ -1,0 +1,103 @@
+/* Login container */
+.login {
+  background-color: black;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+}
+
+/* Login card */
+
+.login-card {
+  padding-top: 15%;
+  padding-bottom: 20%;
+  width: 750px;
+  max-width: 500px;
+  padding: 40px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-left: 3%;
+  box-shadow: 0 2px 20px -5px rgba(144, 139, 139, 0.5);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 1px solid #fff;   
+  padding-bottom: 10px;            
+}
+
+
+/* Form area */
+.form-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Inputs */
+.form-control {
+  border: 2px solid #000;
+  background-color: grey;
+  color: #f0f0f0;
+}
+
+.form-control::placeholder {
+  color: #ddd;
+}
+
+.form-control:focus {
+  background-color: grey;
+  color: #f0f0f0;
+  border: 2px solid #888;
+  outline: none;
+}
+
+/* Submit Button */
+.submit {
+  background-color: #0f0f0f;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: 20px;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit:hover {
+  background-color: #f0f2f4;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.border {
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  border-top: 1px solid #444; 
+}
+
+
+.extra-links a {
+  color: rgb(105, 105, 105);   
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  font-family: "Courier New", Courier, monospace; 
+}
+
+
+.extra-links a:hover {
+  color: #fff;                 
+  text-decoration: underline;  
+}
